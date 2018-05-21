@@ -33,7 +33,7 @@ function appendThis(){
 
 
 function clickCounts(){
-    $('#generateButton').on('click', function(){clicks++} );
+    clicks++;
     return clicks;
 }
 
