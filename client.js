@@ -45,4 +45,4 @@ function clickSwap(){
 
 function clickDelete(){
     $('#string').remove();
-}//delete section
+}//delete section with button
