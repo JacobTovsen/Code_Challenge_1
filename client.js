@@ -1,12 +1,15 @@
 console.log('js');
 
+
+let clicks=0;
+
 $(document).ready( onReady );
 
 function onReady(){
     console.log('jq');
     $('#generateButton').on('click', click );
-    $('#generateButton').on('click', clickCounts );
-    
+    $('#swap').on('click', clickSwap );
+    $('#delete').on('click', clickDelete );
 }
 
 function click(){
@@ -15,34 +18,31 @@ function click(){
 } //on click, append the div from appendThis()
 
 function appendThis(){
+    
+    clickCounts()
     let el = $('#appendHere');
-    outputString = `<div class="startRed">
-                        <p>Counter goes here</p>
+    outputString = `<div class="startRed" id="string">
+                        <p>${clicks}</p>
                         <button id="swap">Swap</button>
                         <button id="delete">Delete</button>
                     </div>`;
     el.append( outputString );
+    
 } //set of buttons to append into the div on generate click
 
-let clicks=1;
+
 
 function clickCounts(){
-    
-    
     $('#generateButton').on('click', function(){clicks++} );
     return clicks;
-    console.log('in click counter' + clicks );
 }
 
 
-
 function clickSwap(){
-    // $('#swap').on('click', swap );
-    $('#swap').on('click', clickSwap );
-
-}
-
-function clickSwap(){
-    console.log('clickSwap');
+    console.log('in clickSwap');
     $('.startRed').toggleClass('startRed');
-}
+}//color swap from red to yellow
+
+function clickDelete(){
+    $('#string').remove();
+}//delete section
