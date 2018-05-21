@@ -8,8 +8,8 @@ $(document).ready( onReady );
 function onReady(){
     console.log('jq');
     $('#generateButton').on('click', click );
-    $('#swap').on('click', clickSwap );
-    $('#delete').on('click', clickDelete );
+    $(document).on('click', '#swap', clickSwap );
+    $(document).on('click', '#delete', clickDelete );
 }
 
 function click(){
@@ -27,7 +27,7 @@ function appendThis(){
                         <button id="delete">Delete</button>
                     </div>`;
     el.append( outputString );
-    
+      
 } //set of buttons to append into the div on generate click
 
 
@@ -44,5 +44,6 @@ function clickSwap(){
 }//color swap from red to yellow
 
 function clickDelete(){
+    console.log('in clickSwap');
     $('#string').remove();
 }//delete section with button
